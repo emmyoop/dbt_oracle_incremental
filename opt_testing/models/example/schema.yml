@@ -1,0 +1,9 @@
+
+version: 2
+
+models:
+    - name: debug_table
+      description: "Materialized as a table"
+
+    - name: debug_incremental
+      description: "Materialized as incremental"

@@ -1,0 +1,33 @@
+sandbox_oracle:
+  target: "{{ env_var('DBT_TARGET') }}"
+  outputs:
+    local:
+      type: "{{ env_var('DBT_DB_TYPE') }}"
+      threads: "{{ env_var('DBT_THREADS') | int }}"
+      host: "{{ env_var('DBT_HOST') }}"
+      port: "{{ env_var('DBT_PORT') | int }}"
+      user: "{{ env_var('DBT_USER') }}"
+      pass: "{{ env_var('DBT_PASSWORD_LOCAL') }}"
+      service: "{{ env_var('DBT_SYSTEM_LOCAL') }}"
+      dbname: "{{ env_var('DBT_DB_LOCAL') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+    dev:
+      type: "{{ env_var('DBT_DB_TYPE') }}"
+      threads: "{{ env_var('DBT_THREADS') | int }}"
+      host: "{{ env_var('DBT_HOST') }}"
+      port: "{{ env_var('DBT_PORT') | int }}"
+      user: "{{ env_var('DBT_USER') }}"
+      pass: "{{ env_var('DBT_PASSWORD_DEV') }}"
+      service: "{{ env_var('DBT_SYSTEM_QUAL') }}"
+      dbname: "{{ env_var('DBT_DB_DEV') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+    qual:
+      type: "{{ env_var('DBT_DB_TYPE') }}"
+      threads: "{{ env_var('DBT_THREADS') | int }}"
+      host: "{{ env_var('DBT_HOST') }}"
+      port: "{{ env_var('DBT_PORT') | int }}"
+      user: "{{ env_var('DBT_USER') }}"
+      pass: "{{ env_var('DBT_PASSWORD_QUAL') }}"
+      service: "{{ env_var('DBT_SYSTEM_QUAL') }}"
+      dbname: "{{ env_var('DBT_DB_QUAL') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
